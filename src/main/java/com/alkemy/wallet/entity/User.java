@@ -51,4 +51,6 @@ public class User {
     @Column(name = "SOFT_DELETE")
     private Boolean softDelete;
 
+    //TODO: Role role;
+
 }
