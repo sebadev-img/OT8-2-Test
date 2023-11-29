@@ -45,6 +45,8 @@ public class Account {
     @Column(name="SOFT_DELETE")
     private Boolean softDelete;
 
-    // Machear la relacion con la entidad User
-    // private User user
+
+    @ManyToOne
+    @JoinColumn(name="USER_ID", referencedColumnName = "ID")
+    private User userId;
 }
