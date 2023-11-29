@@ -1,12 +1,8 @@
 package com.alkemy.wallet.entity;
 
 import java.sql.Timestamp;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import lombok.AllArgsConstructor;
@@ -42,6 +38,8 @@ public class FixedTermDeposit {
     @Column(name = "UPDATE_DATE")
     private Timestamp updateDate;
 
-    //TODO: FK de account
+    @ManyToOne
+    @JoinColumn(name="ACCOUNT_ID", referencedColumnName = "ID")
+    private Account accountID;
 
 }

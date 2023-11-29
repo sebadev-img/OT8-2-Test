@@ -1,12 +1,9 @@
 package com.alkemy.wallet.entity;
 
 import java.sql.Timestamp;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.List;
+import javax.persistence.*;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import lombok.AllArgsConstructor;
@@ -51,6 +48,11 @@ public class User {
     @Column(name = "SOFT_DELETE")
     private Boolean softDelete;
 
-    //TODO: Role role;
+    @OneToOne
+    @JoinColumn(name="ROLE_ID", referencedColumnName = "ID")
+    private Role roleId;
+
+    @OneToMany(mappedBy = "userId")
+    private List<Account> accounts;
 
 }

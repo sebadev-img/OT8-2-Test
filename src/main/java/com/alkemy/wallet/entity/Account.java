@@ -7,6 +7,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -49,4 +50,10 @@ public class Account {
     @ManyToOne
     @JoinColumn(name="USER_ID", referencedColumnName = "ID")
     private User userId;
+
+    @OneToMany(mappedBy = "accountId")
+    private List<Transaction> transactions;
+
+    @OneToMany(mappedBy = "accountID")
+    private List<FixedTermDeposit> fixedTermDeposits;
 }
