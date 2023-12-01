@@ -5,6 +5,7 @@ import com.alkemy.wallet.entity.User;
 import com.alkemy.wallet.repository.IUserRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements IUserService{
@@ -29,5 +30,17 @@ public class UserServiceImpl implements IUserService{
         }).toList();
 
         return userDtos;
+    }
+
+    @Override
+    public User deleteUserById(Long id) {
+        Optional<User> userOptional =userRepository.findById(id);
+        if(userOptional.isPresent()){
+            User user=userOptional.get();
+            user.setSoftDelete(Boolean.TRUE);
+            userRepository.save(user);
+            return user;
+        }
+        return null;
     }
 }
