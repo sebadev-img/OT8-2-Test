@@ -4,9 +4,7 @@ import com.alkemy.wallet.dto.UserDto;
 import com.alkemy.wallet.entity.User;
 import com.alkemy.wallet.repository.IUserRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements IUserService{
