@@ -26,7 +26,7 @@ public class UserServiceImpl implements IUserService{
                     user.getFirstName(),
                     user.getLastName(),
                     user.getEmail(),
-                    user.getRoleId().getName().name()
+                    user.getRole().getName().name()
                     );
         }).toList();
 
