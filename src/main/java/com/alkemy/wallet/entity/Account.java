@@ -1,11 +1,12 @@
 package com.alkemy.wallet.entity;
 
 import com.alkemy.wallet.enums.ECurrency;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.*;
+
 import java.sql.Timestamp;
 import java.util.List;
 

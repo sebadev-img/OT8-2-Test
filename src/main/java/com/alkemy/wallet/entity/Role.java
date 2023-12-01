@@ -1,8 +1,9 @@
 package com.alkemy.wallet.entity;
 
-import javax.persistence.*;
+
 
 import com.alkemy.wallet.enums.ERole;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

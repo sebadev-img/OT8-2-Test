@@ -1,8 +1,9 @@
 package com.alkemy.wallet.entity;
 
 import java.sql.Timestamp;
-import javax.persistence.*;
 
+
+import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import lombok.AllArgsConstructor;
