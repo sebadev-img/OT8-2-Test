@@ -2,8 +2,8 @@ package com.alkemy.wallet.entity;
 
 import java.sql.Timestamp;
 import java.util.List;
-import javax.persistence.*;
 
+import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import lombok.AllArgsConstructor;
@@ -50,7 +50,7 @@ public class User {
 
     @OneToOne
     @JoinColumn(name="ROLE_ID", referencedColumnName = "ID")
-    private Role roleId;
+    private Role role;
 
     @OneToMany(mappedBy = "userId")
     private List<Account> accounts;
