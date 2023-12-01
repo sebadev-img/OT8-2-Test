@@ -50,7 +50,7 @@ public class User {
 
     @OneToOne
     @JoinColumn(name="ROLE_ID", referencedColumnName = "ID")
-    private Role roleId;
+    private Role role;
 
     @OneToMany(mappedBy = "userId")
     private List<Account> accounts;
